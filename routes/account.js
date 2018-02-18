@@ -4,8 +4,7 @@ var router = express.Router();
 var async = require('async');
 var Web3 = require('web3');
 
-router.get('/:account', function(req, res, next) {
-  
+function getAccount(req, res, next, all) {
   var config = req.app.get('config');  
   var web3 = new Web3();
   web3.setProvider(config.provider);
@@ -22,7 +21,7 @@ router.get('/:account', function(req, res, next) {
     }, function(lastBlock, callback) {
       data.lastBlock = lastBlock.number;
       //limits the from block to -1000 blocks ago if block count is greater than 1000
-      if (data.lastBlock > 0x3E8) {
+      if (data.lastBlock > 0x3E8 && !all) {
         data.fromBlock = data.lastBlock - 0x3e8;
       } else {
         data.fromBlock = 0x00;
@@ -134,7 +133,14 @@ router.get('/:account', function(req, res, next) {
     
     res.render('account', { account: data });
   });
-  
+}
+
+router.get('/:account', function(req, res, next) {
+  getAccount(req, res, next, false);
+});
+
+router.get('/:account/all', function(req, res, next) {
+  getAccount(req, res, next, true);
 });
 
 module.exports = router;

@@ -31,6 +31,14 @@ function getAccount(req, res, next, all) {
       });
     }, function(balance, callback) {
       data.balance = balance;
+      web3.eth.getTransactionCount(req.params.account, function(err, nonce) {
+        callback(err, nonce);
+      });
+    }, function(nonce, callback) {
+      data.nonce = nonce;
+      if (nonce > 500) {
+        data.fromBlock = data.lastBlock - 0x3e8; 
+      }
       web3.eth.getCode(req.params.account, function(err, code) {
         callback(err, code);
       });

@@ -37,7 +37,11 @@ function getAccount(req, res, next, all) {
     }, function(nonce, callback) {
       data.nonce = nonce;
       if (nonce > 100) {
-        data.fromBlock = data.lastBlock - 0x3e8; 
+        if (data.lastBlock > 0x3E8) {
+          data.fromBlock = data.lastBlock - 0x3e8;
+        } else {
+          data.fromBlock = 0x00; 
+        }
       }
       web3.eth.getCode(req.params.account, function(err, code) {
         callback(err, code);

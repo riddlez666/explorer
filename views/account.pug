@@ -34,8 +34,9 @@ block content
             p There are more than 100 transactions in this account. The transaction history has been pruned.
         else
           h3 Recent Transactions
-            small &nbsp;&nbsp;
-              a(href="/account/" + account.address + "/all") Show All Transactions
+            if account.nonce <= 100
+              small &nbsp;&nbsp;
+                a(href="/account/" + account.address + "/all") Show All Transactions
         table.table
           thead
             tr

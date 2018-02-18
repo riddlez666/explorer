@@ -131,7 +131,7 @@ function getAccount(req, res, next, all) {
     
     data.blocks = data.blocks.reverse().splice(0, 100);
     
-    res.render('account', { account: data });
+    res.render('account', { account: data, isAll: all });
   });
 }
 

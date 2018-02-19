@@ -141,7 +141,11 @@ function getAccount(req, res, next, all) {
       data.name = config.names[data.address];
     }
     
-    data.blocks = data.blocks.reverse().splice(0, 100);
+    if (!all) {
+      data.blocks = data.blocks.reverse().splice(0, 100);
+    } else {
+      data.blocks = data.blocks.reverse(); 
+    }
     
     res.render('account', { account: data, isAll: all });
   });

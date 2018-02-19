@@ -98,7 +98,10 @@ router.get('/:tx', function(req, res, next) {
       try {
         var jsonAbi = JSON.parse(tx.source.abi);
         abiDecoder.addABI(jsonAbi);
-        tx.logs = abiDecoder.decodeLogs(receipt.logs);
+        var decodedLogs = abiDecoder.decodeLogs(receipt.logs);
+        if (decodedLogs.every(function(v) { return v; })) {
+          tx.logs = decodedLogs; 
+        }
         tx.callInfo = abiDecoder.decodeMethod(tx.input);
       } catch (e) {
         console.log("Error parsing ABI:", tx.source.abi, e);

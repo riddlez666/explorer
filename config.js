@@ -10,8 +10,8 @@ var config = function () {
   this.bootstrapUrl = "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css";
   
   this.names = {
-    "0x00522e276908428C02457d8a8747b9aA0AB52570": "Dev Fund",
-    "0x46739b691c011530aaf480aacd339c206a2046e6": "Community Fund",
+    "0xe9c2d958e6234c862b4afbd75b2fd241e9556303": "Dev Fund",
+    "0xa2c7779077edc618c926ab5ba7510877c187cd92": "Community Fund",
     "0x65767ec6d4d3d18a200842352485cdc37cbf3a21": "pool.ellaism.org",
     "0x395231b5f396fd5b9c6833feea540a3506121ec3": "ella.pool.sexy",
     "0xb170c70143b543cd61e7bcadcb9a2f799becda90": "ella.cryptobitpool.eu",
@@ -21,7 +21,6 @@ var config = function () {
     "0x4a44ef8b619e27f707bf0b0284c6ecf3e40cefd0": "ella.epool.io",
     "0xf9fdd1d78f106b4e7ede5a0613077fd69d835f88": "DegenPool",
     "0x852936b16e86a831c9653f48489bbc815390795e": "ellaismpool.com"
-
   }
   
 }

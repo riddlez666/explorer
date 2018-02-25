@@ -20,7 +20,12 @@ var config = function () {
     "0x70a55acb5eec85a7823be72b9c41d73f4411fb85": "pool.ellaism.io",
     "0x4a44ef8b619e27f707bf0b0284c6ecf3e40cefd0": "ella.epool.io",
     "0xf9fdd1d78f106b4e7ede5a0613077fd69d835f88": "DegenPool",
-    "0x852936b16e86a831c9653f48489bbc815390795e": "ellaismpool.com"
+    "0x852936b16e86a831c9653f48489bbc815390795e": "ellaismpool.com",
+    "0x6131051b5840da6e4a7916cdaa3c34b5568391a3": "Coins.Farm",
+    "0x00a86233f4d65f4018ca7f8626b96ce72af05a7c": "ella.2miners.com",
+    "0xc934884be6338925ed2ef41ce567a14abfcf8763": "Melny3",
+    "0x119e4cc05bf44f9cd0b34453b204b7c7089814e2": "ell.baikalmine.com",
+    "0x706e91ff1a586094855cb2408d54657df6b83258": "Megapool.io"
   }
   
 }

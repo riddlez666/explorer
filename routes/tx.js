@@ -109,11 +109,10 @@ router.get('/:tx', function(req, res, next) {
     }
     tx.traces = [];
     tx.failed = false;
+    tx.gas = parseInt(tx.gas, 16);
     tx.gasUsed = 0;
     if (receipt != null) {
       tx.gasUsed = parseInt(receipt.gasUsed, 16);
-    } else {
-      tx.gasUsed = 0;  
     }
     if (traces != null) {
       traces.forEach(function(trace) {
